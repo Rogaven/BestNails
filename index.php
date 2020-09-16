@@ -1,7 +1,9 @@
 <?php
 header('Content-Type: application/json');
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 $data = [
-    [
 ["title" => "google.com", "link" => "https://google.com"],
 ["title" => "ya.ru", "link"  => "https://ya.ru"],
 ["title" => "worldslongestwebsite", "link"  => "http://www.worldslongestwebsite.com"],
@@ -31,6 +33,7 @@ $data = [
 ["title" => "github.com/SwiftGen", "link"  => "https://github.com/SwiftGen/SwiftGen#strings"],
 ["title" => "github.com/wayne5540", "link"  => "https://github.com/wayne5540/swift-fb-login-example/blob/master/FacebookLogin/ViewController.swift"],
 ["title" => "developers.facebook.com", "link"  => "https://developers.facebook.com/apps/513766485973331/settings/basic/"],
-    ]
 ];
-echo json_encode(array_slice($data, 0, 10 + time() % 10));
+$a = array_slice($data, 0, 10+time() % 10);
+shuffle($a);
+echo json_encode($a);
