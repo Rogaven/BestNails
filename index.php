@@ -5,7 +5,7 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 $data = [
 ["title" => "google.com", "link" => "https://google.com"],
-["title" => "ya.ru", "link"  => "https://ya.ru"],
+["link"  => "https://ya.ru"],
 ["title" => "worldslongestwebsite", "link"  => "http://www.worldslongestwebsite.com"],
 ["title" => "foo", "link"  => "https://foo.me"],
 ["title" => "ya/ff", "link"  => "http://ya.ru/fff"],
